@@ -1,1 +1,3 @@
-package jp.example.model.domain.support.repository;public interface Repository {}
+package jp.example.model.domain.support.repository;
+
+public interface Repository {}
