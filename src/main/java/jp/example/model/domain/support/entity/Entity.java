@@ -1,7 +1,6 @@
 package jp.example.model.domain.support.entity;
 
-public interface Entity<K extends Identifier, E extends Entity<K, E>>
-{
+public interface Entity<K extends Identifier, E extends Entity<K, E>> {
 	boolean matches(K identifier);
 
 	boolean notMatches(K identifier);

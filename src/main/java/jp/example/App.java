@@ -6,16 +6,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @EnableAutoConfiguration
-public class App
-{
+public class App {
 	@RequestMapping("/")
-	String home()
-	{
+	String home() {
 		return "Hello World!!!!!";
 	}
 
-	public static void main(String args[])
-	{
+	public static void main(String args[]) {
 		SpringApplication.run(App.class, args);
 	}
 }

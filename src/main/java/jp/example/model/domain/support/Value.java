@@ -1,7 +1,6 @@
 package jp.example.model.domain.support;
 
-public interface Value
-{
+public interface Value {
 	@Override
 	int hashCode();
 
