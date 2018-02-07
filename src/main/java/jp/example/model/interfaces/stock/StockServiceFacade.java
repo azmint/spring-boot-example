@@ -1,7 +1,9 @@
 package jp.example.model.interfaces.stock;
 
-import jp.example.model.application.reference.stock.search.*;
+import jp.example.model.interfaces.stock.dto.*;
 
-public interface StockServiceFacade extends StockSearchService {
+import java.util.*;
 
+public interface StockServiceFacade {
+	Optional<StockDto> execute(long stockNo);
 }

@@ -10,6 +10,6 @@ public final class DtoFactory {
 	}
 
 	public StockDto create() {
-		throw new UnsupportedOperationException("見実装");
+		return new StockDto(stock.getStockNo().getValue(), stock.getStockType().name(), stock.getQuantity().getValue());
 	}
 }

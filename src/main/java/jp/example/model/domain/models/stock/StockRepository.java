@@ -1,5 +1,6 @@
 package jp.example.model.domain.models.stock;
 
-import jp.example.model.domain.support.repository.*;
+import jp.example.model.domain.support.*;
 
-public interface StockRepository extends Repository<StockNo, Stock, StockList> {}
+@org.springframework.stereotype.Repository
+public interface StockRepository extends Repository<StockNo, Stock>, IdentifierGenerate<StockNo> {}

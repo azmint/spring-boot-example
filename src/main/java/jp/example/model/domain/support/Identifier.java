@@ -1,4 +1,4 @@
-package jp.example.model.domain.support.entity;
+package jp.example.model.domain.support;
 
 import jp.example.model.domain.support.*;
 

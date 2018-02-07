@@ -1,10 +1,10 @@
 package jp.example.model.interfaces.stock.dto;
 
-import javax.validation.constraints.*;
+import lombok.*;
 
+@ToString
 public final class StockDto {
 	public final long stockNo;
-	@NotNull
 	public final String stockType;
 	public final long quantity;
 

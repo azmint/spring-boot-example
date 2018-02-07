@@ -1,15 +1,27 @@
 package jp.example.model.domain.models.stock;
 
-import jp.example.model.domain.support.list.AbstractList;
+import lombok.*;
 
+import javax.validation.constraints.*;
 import java.util.*;
 
-public final class StockList extends AbstractList<Stock, StockList> {
-	private StockList(List<Stock> elements) {
-		super(elements);
+@EqualsAndHashCode
+@ToString
+public final class StockList {
+	@NotNull
+	private final List<Stock> stocks;
+
+	private StockList(
+			@NotNull
+					List<? extends Stock> stocks) {
+		this.stocks = new ArrayList<>(stocks);
 	}
 
-	public static StockList of(List<Stock> stocks) {
+	public static StockList of(List<? extends Stock> stocks) {
 		return new StockList(stocks);
+	}
+
+	public Quantity totalQuantity() {
+		return stocks.parallelStream().reduce(Quantity.zero(), (quantity, stock) -> stock.quantity.plus(quantity), (quantity, quantity2) -> quantity.plus(quantity2));
 	}
 }
