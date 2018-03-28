@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 
 @EqualsAndHashCode(of = "categoryNo")
 @ToString
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(staticName = "of")
 @Builder
 public final class Category implements Entity<CategoryNo>

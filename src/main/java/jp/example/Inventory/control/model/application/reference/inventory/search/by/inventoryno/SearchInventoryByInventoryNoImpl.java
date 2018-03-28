@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-@ComponentScan("jp.example.model.infrastructure.stock")
+@ComponentScan
 public final class SearchInventoryByInventoryNoImpl implements SearchInventoryByInventoryNo
 {
 	@Autowired

@@ -1,13 +1,15 @@
 package jp.example.Inventory.control.model.domain.events;
 
 import jp.example.Inventory.control.model.domain.support.DomainEvent;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @ToString
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(staticName = "of")
 @Builder
 public final class OrderAccepted implements DomainEvent

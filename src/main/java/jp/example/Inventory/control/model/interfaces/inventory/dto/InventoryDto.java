@@ -1,4 +1,4 @@
-package jp.example.Inventory.control.model.interfaces.stock.dto;
+package jp.example.Inventory.control.model.interfaces.inventory.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

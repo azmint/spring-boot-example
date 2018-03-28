@@ -8,7 +8,6 @@ import javax.validation.constraints.NotNull;
 
 @EqualsAndHashCode(of = "productNo")
 @ToString
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(staticName = "of")
 @Builder
 public final class Product implements Entity<ProductNo>

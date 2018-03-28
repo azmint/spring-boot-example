@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 
 @EqualsAndHashCode(of = "storeNo")
 @ToString
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(staticName = "of")
 @Builder
 public final class Store implements Entity<StoreNo>
