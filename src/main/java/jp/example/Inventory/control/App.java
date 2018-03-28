@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @EnableAutoConfiguration
-@ComponentScan
+@ComponentScan("jp.example.Inventory.control.model")
 public class App
 {
 	@Autowired
