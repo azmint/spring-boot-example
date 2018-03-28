@@ -1,4 +1,4 @@
-package jp.example.Inventory.control.model.domain.models.stock;
+package jp.example.Inventory.control.model.domain.models.inventory;
 
 import jp.example.Inventory.control.model.domain.models.product.ProductNo;
 import jp.example.Inventory.control.model.domain.models.store.StoreNo;
@@ -9,14 +9,13 @@ import javax.validation.constraints.NotNull;
 
 @EqualsAndHashCode(of = "storeNo")
 @ToString
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(staticName = "of")
 @Builder
-public final class Stock implements Entity<StockNo>
+public final class Inventory implements Entity<InventoryNo>
 {
 	@Getter
 	@NotNull
-	final StockNo stockNo;
+	final InventoryNo inventoryNo;
 	@Getter
 	@NotNull
 	final ProductNo productNo;
@@ -37,8 +36,8 @@ public final class Stock implements Entity<StockNo>
 	final Quantity quantity;
 
 	@Override
-	public StockNo getIdentifier()
+	public InventoryNo getIdentifier()
 	{
-		return this.stockNo;
+		return this.inventoryNo;
 	}
 }

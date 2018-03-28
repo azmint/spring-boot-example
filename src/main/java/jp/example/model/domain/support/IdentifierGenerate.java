@@ -1,1 +1,0 @@
-package jp.example.model.domain.support;public interface IdentifierGenerate<T extends Identifier> {	T nextId();}

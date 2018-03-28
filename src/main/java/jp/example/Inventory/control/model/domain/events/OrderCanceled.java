@@ -23,7 +23,7 @@ public final class OrderCanceled implements DomainEvent
 	private final String orderNo;
 	@Getter
 	@NotNull
-	private final String stockNo;
+	private final String inventoryNo;
 	@Getter
 	@NotNull
 	private final int quantity;

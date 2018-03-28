@@ -1,4 +1,4 @@
-package jp.example.Inventory.control.model.domain.models.stock;
+package jp.example.Inventory.control.model.domain.models.inventory;
 
 import jp.example.Inventory.control.model.domain.support.ValueObject;
 import lombok.RequiredArgsConstructor;

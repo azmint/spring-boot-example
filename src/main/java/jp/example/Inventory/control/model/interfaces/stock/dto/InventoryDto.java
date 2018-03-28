@@ -7,9 +7,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @Builder
 @ToString
-public final class StockDto
+public final class InventoryDto
 {
-	public final long stockNo;
+	public final long inventoryNo;
 	public final long productNo;
 	public final long storeNo;
 	public final String description;

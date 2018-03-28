@@ -1,8 +1,8 @@
 package jp.example.Inventory.control;
 
 import jp.example.Inventory.control.model.domain.models.category.CategoryNo;
-import jp.example.Inventory.control.model.interfaces.stock.StockServiceFacade;
-import jp.example.Inventory.control.model.interfaces.stock.dto.StockDto;
+import jp.example.Inventory.control.model.interfaces.stock.InventoryServiceFacade;
+import jp.example.Inventory.control.model.interfaces.stock.dto.InventoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -17,15 +17,15 @@ import java.util.Optional;
 @ComponentScan("jp.example.model")
 public class App {
 	@Autowired
-	StockServiceFacade stockServiceFacade;
+	InventoryServiceFacade inventoryServiceFacade;
 
 	@RequestMapping("/")
 	String home() {
-		Optional<StockDto> maybeStock = stockServiceFacade.execute(1);
+		Optional<InventoryDto> maybeStock = inventoryServiceFacade.execute(1);
 
 		CategoryNo categoryNo = CategoryNo.of(1);
 
-		return maybeStock.map(StockDto::toString).orElse("在庫が存在しません。");
+		return maybeStock.map(InventoryDto::toString).orElse("在庫が存在しません。");
 	}
 
 	public static void main(String args[]) {

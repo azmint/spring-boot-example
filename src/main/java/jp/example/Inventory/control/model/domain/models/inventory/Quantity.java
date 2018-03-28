@@ -1,4 +1,4 @@
-package jp.example.Inventory.control.model.domain.models.stock;
+package jp.example.Inventory.control.model.domain.models.inventory;
 
 import jp.example.Inventory.control.model.domain.support.ValueObject;
 import lombok.RequiredArgsConstructor;
@@ -7,21 +7,20 @@ import org.hibernate.validator.constraints.Range;
 
 @RequiredArgsConstructor(staticName = "of")
 @Value
-public final class Price implements ValueObject
+public final class Quantity implements ValueObject
 {
-	private static final Price ZERO = new Price(0);
+	private static final Quantity ZERO = new Quantity(0);
 
 	@Range(min = 0)
 	private final int value;
 
-	public static Price zero()
+	public static Quantity zero()
 	{
 		return ZERO;
 	}
 
-	public Price plus(Price price)
+	public boolean isOneOrMore()
 	{
-		int result = this.value + price.value;
-		return new Price(result);
+		return this.value > 0;
 	}
 }
