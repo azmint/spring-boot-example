@@ -1,0 +1,1 @@
+package jp.example.Inventory.control.model.domain.support;public interface IdentifierGenerator<T extends Identifier> {	T nextId();}
