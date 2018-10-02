@@ -1,0 +1,1 @@
+package jp.sample.taskmanagement.model.core.library.tuple;public interface ITuple {	static <A, B> Tuple2<A, B> of(A _1, B _2) {		return new Tuple2<>(_1, _2);	}	static <A, B, C> Tuple3<A, B, C> of(A _1, B _2, C _3) {		return new Tuple3<>(_1, _2, _3);	}}
