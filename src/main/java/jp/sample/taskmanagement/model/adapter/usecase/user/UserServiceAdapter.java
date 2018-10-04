@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 @Service
-@ComponentScan("jp.sample.taskmanagement.model.adapter")
+@ComponentScan("jp.sample.taskmanagement.model.adapter.mysql.user")
 public final class UserServiceAdapter extends AbstractUserService {
 	@Autowired
 	IUserRepository repository;

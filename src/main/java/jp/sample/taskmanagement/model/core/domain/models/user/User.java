@@ -4,7 +4,7 @@ import jp.sample.taskmanagement.model.core.domain.support.entity.IEntity;
 
 import java.util.Objects;
 
-public final class User implements IEntity<UserId> {
+public class User implements IEntity<UserId> {
 	final UserId id;
 	final UserName userName;
 

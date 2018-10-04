@@ -1,6 +1,7 @@
 package jp.sample.taskmanagement.model.core.domain.models.user;
 
 import jp.sample.taskmanagement.model.core.domain.support.IRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 

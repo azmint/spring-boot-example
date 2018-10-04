@@ -20,22 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class App {
 	@Autowired
 	UserServicePort userServicePort;
-	@Autowired
-	IUserRecordMapper userRecordMapper;
 
 	public static void main(String args[]) {
 		SpringApplication.run(App.class, args);
 	}
 
 	@RequestMapping("/")
-	String home() {
+	UserDto home() {
 		IOption<UserDto> maybeUser = this.userServicePort.findBy("1");
-		UserRecord userRecord = this.userRecordMapper.selectWhereId("ABCDEFGHIJK");
-
-		User user = EnumUserMapper.apply(userRecord);
-
-		return maybeUser.map(UserDto :: toString)
-						.orElse("ユーザーが存在しません。")
-			   + ",user=[" + user + "]";
+		return maybeUser.orElse(null);
 	}
 }
