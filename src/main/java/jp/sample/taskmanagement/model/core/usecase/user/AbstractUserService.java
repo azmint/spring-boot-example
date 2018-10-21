@@ -7,20 +7,21 @@ public abstract class AbstractUserService {
 	protected abstract IUserRepository repository();
 
 	public final IOption<User> findBy(UserId userId) {
-		return this.repository()
-				   .findBy(userId);
+		return this.repository().findBy(userId);
 	}
 
 	public final Users findAll() {
-		return this.repository()
-				   .findAll();
+		return this.repository().findAll();
 	}
 
-	public final User registry(UserName userName) {
-		UserId nextId = this.repository()
-							.nextId();
+	public final User register(UserName userName) {
+		UserId nextId = this.repository().nextId();
 		User user = new User(nextId, userName);
-		return this.repository()
-				   .store(user);
+		this.repository().register(user);
+		return user;
+	}
+
+	public final void delete(UserId id) {
+		this.repository().delete(id);
 	}
 }

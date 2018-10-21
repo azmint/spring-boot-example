@@ -12,6 +12,10 @@ public final class Users implements IEntities<UserId, User> {
 		this.users = users;
 	}
 
+	public List<User> getUsers() {
+		return users;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

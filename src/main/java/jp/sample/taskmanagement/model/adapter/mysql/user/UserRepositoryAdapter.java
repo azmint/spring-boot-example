@@ -8,6 +8,9 @@ import jp.sample.taskmanagement.model.core.library.maybe.option.IOption;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Repository
 public class UserRepositoryAdapter implements IUserRepository {
 	@Autowired
@@ -15,23 +18,29 @@ public class UserRepositoryAdapter implements IUserRepository {
 
 	@Override
 	public Users findAll() {
-		return null;
+		List<UserRecord> userRecords = userRecordMapper.selectAll();
+		List<User> users = userRecords.stream().map(EnumUserMapper::apply).collect(Collectors.toList());
+		return new Users(users);
 	}
 
 	@Override
 	public UserId nextId() {
-		return null;
+		return new UserId("new user");
 	}
 
 	@Override
 	public IOption<User> findBy(UserId id) {
 		UserRecord userRecord = userRecordMapper.selectWhereId(id.getValue());
-		return IOption.ofNullable(userRecord)
-					  .map(EnumUserMapper :: apply);
+		return IOption.ofNullable(userRecord).map(EnumUserMapper::apply);
 	}
 
 	@Override
-	public User store(User entity) {
-		return null;
+	public void register(User user) {
+		this.userRecordMapper.insert(EnumUserRecordMapper.apply(user));
+	}
+
+	@Override
+	public void delete(UserId id) {
+		this.userRecordMapper.delete(id.getValue());
 	}
 }

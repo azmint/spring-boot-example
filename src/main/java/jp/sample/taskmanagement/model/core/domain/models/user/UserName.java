@@ -17,6 +17,20 @@ public class UserName implements IValueObject {
 		return firstName + " " + lastName;
 	}
 
+	/**
+	 * @return the firstName
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
+
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

@@ -10,5 +10,5 @@ public interface IRepository<T extends IEntityId, E extends IEntity<T>> {
 
 	IEntities<T, E> findAll();
 
-	E store(E entity);
+	void register(E entity);
 }
